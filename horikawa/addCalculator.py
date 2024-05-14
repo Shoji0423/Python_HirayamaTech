@@ -1,5 +1,4 @@
 # 3つの整数を引数として、その合計を返す処理
-
 import sys
 args = sys.argv
 
