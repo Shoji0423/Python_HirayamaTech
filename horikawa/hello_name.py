@@ -1,5 +1,4 @@
 # 引数を"Hello"の後ろにくっつけてprintする処理
-
 import sys
 args = sys.argv
 
