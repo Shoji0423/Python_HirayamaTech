@@ -1,5 +1,8 @@
-# 3教科の点数を引数とし、全て70点以上or合計220点以上の場合、合格を返す処理
-# ただし、50点未満の点数がある場合は不合格
+# 3教科の点数を引数とし、[1]全て70点以上 or [2]合計220点以上の場合、合格を返す処理
+# ただし、[3]50点未満の点数がある場合は不合格
+
+# フラグ変数 check_boolを用いて、判定を行う
+
 import sys
 agrs = sys.argv
 
@@ -11,13 +14,13 @@ english = int(agrs[3])
 # 合格判定変数
 check_bool = False
 
-# 合格条件の判定
+# 合格条件の判定 [1]または[2]
 if math >= 70 and japanese >= 70 and english >= 70:
     check_bool = True
 elif math + japanese + english >= 220:
     check_bool = True
 
-# 不合格条件の判定
+# 不合格条件の判定 [3]
 if math < 50 or japanese < 50 or english < 50:
     check_bool = False
 
