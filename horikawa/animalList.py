@@ -16,5 +16,5 @@ animalList.pop()            # [1]
 animalList.sort()           # [2]
 
 # 結果を表示
-print(animalList)
+print(animalList, end="")
 
