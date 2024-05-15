@@ -12,9 +12,6 @@ while sum < 100:
     # 判定　100ぴったり
     if sum == 100:
         print("Just 100!", end="")
-        break
     # 判定　100オーバー
     elif sum > 100:
         print("Over!", end="")
-        break
-
