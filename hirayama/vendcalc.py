@@ -37,6 +37,7 @@ while True:
         break
     for name in drink_list:
         print(name+str(drink_list[name])+"円")
+        
 #おつりフェーズ 
 print("おつり")
 if money >= 1000:
