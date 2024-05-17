@@ -1,4 +1,5 @@
 def calc_salary(salary):
+    '''支給額と全額を算出する関数'''
     # 税額を算出
     tax = 0
     if salary > 1000000:
