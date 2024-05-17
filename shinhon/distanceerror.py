@@ -17,9 +17,13 @@ stations = {
 }
 
 # 駅が存在しているかどうかを確認する
-try:
-    start_dis = stations[start]
-    end_dis = stations[end]
-    print(Decimal(abs(end_dis - start_dis)).quantize(Decimal(".01"), rounding=ROUND_HALF_UP))
-except:
-    print('のぞみの停車駅を引数に設定してください')
+while True:
+    try:
+        start_dis = stations[start]
+        end_dis = stations[end]
+        print(Decimal(abs(end_dis - start_dis)).quantize(Decimal(".01"), rounding=ROUND_HALF_UP))
+        break;
+    except:
+        print('のぞみの停車駅を引数に設定してください')
+        start = input("始発駅を入力してくれ: ")
+        end = input("到着駅を入力してくれ: ")
