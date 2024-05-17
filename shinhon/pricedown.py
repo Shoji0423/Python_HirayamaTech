@@ -12,8 +12,10 @@ hinmoku = {"リンゴ":80 , "みかん":198, "バナナ":150, "ビール":360, "
 fruits = ("リンゴ", "みかん", "バナナ")            #果物類をタプルで定義
 alcohol = ("ビール", "日本酒")                         #酒類をタプルで定義
 noodles = ("ラーメン", "うどん", "パスタ")   #麺類をタプルで定義
+        
 
 def pricedown(food_list):
+    '''区分のリストを引数として代入し、hinmokuリストの中の該当商品に対して値下げ作業を行う'''
     for i in food_list:
         if (hinmoku[i] > price_down):
             hinmoku[i] -= price_down
