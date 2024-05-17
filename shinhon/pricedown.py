@@ -13,24 +13,19 @@ fruits = ("リンゴ", "みかん", "バナナ")            #果物類をタプ�
 alcohol = ("ビール", "日本酒")                         #酒類をタプルで定義
 noodles = ("ラーメン", "うどん", "パスタ")   #麺類をタプルで定義
 
+def pricedown(food_list):
+    for i in food_list:
+        if (hinmoku[i] > price_down):
+            hinmoku[i] -= price_down
+        else:
+            hinmoku[i] = 1
+
 #値下げ金額を計算
 if hm_class == "果物類":
-    for i in fruits:
-        if (hinmoku[i] > price_down):
-            hinmoku[i] -= price_down
-        else:
-            hinmoku[i] = 1
+    pricedown(fruits)
 elif hm_class == "酒類":
-    for i in alcohol:
-        if (hinmoku[i] > price_down):
-            hinmoku[i] -= price_down
-        else:
-            hinmoku[i] = 1
+    pricedown(alcohol)
 elif hm_class == "麺類":
-    for i in noodles:
-        if (hinmoku[i] > price_down):
-            hinmoku[i] -= price_down
-        else:
-            hinmoku[i] = 1
+    pricedown(noodles)
 
 print(hinmoku)
