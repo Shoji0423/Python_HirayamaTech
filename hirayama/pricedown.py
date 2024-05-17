@@ -19,12 +19,12 @@ if hm_class == "果物類" :
         hinmoku[num]=hinmoku[num]-price_down
         if hinmoku[num] < 1 :
             hinmoku[num]=1
-if hm_class == "酒類" :
+elif hm_class == "酒類" :
     for num in alcohol:
         hinmoku[num]=hinmoku[num]-price_down
         if hinmoku[num] < 1 :
             hinmoku[num]=1
-if hm_class == "麺類" :
+elif hm_class == "麺類" :
     for num in noodles:
         hinmoku[num]=hinmoku[num]-price_down
         if hinmoku[num] < 1 :

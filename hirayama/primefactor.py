@@ -15,5 +15,6 @@ while number!=1:
                 number_list.append(i)
                 break
             i+=2
+
 print(number_list)
         
