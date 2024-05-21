@@ -1,14 +1,10 @@
-def calcsalary(salary, tax, pay_amount):
-    import sys
+def calcsalary(salary):
     from decimal import Decimal, ROUND_HALF_UP
-    args = sys.argv
 
-#引数を変数に代入
-    salary = int(args[1])
 #税額の計算
-    if (salary > 1000000):
+    if salary > 1000000:
         tax = (salary-1000000) * 0.2 + 100000
-    elif(salary <= 1000000):
+    elif salary <= 1000000:
         tax = salary * 0.1
 #四捨五入の計算
     tax = Decimal(str(tax)).quantize(Decimal("0"),rounding=ROUND_HALF_UP)
