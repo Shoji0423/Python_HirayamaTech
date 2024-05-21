@@ -19,18 +19,16 @@ def priceCalc(isHoliday, nomal, children):
     return total_price
 
 
-# 引数をstr型の年月日、int型 大人人数、int型 子供人数として変数に格納
+# 引数を格納
+# str型:年月日 int型:大人人数 int型:子供人数
 date_str = sys.argv[1]
-nomal = int(sys.argv[2])
-children = int(sys.argv[3])
+nomal,children = int(sys.argv[2]), int(sys.argv[3])
 
 # 年月日をそれぞれ分割
-year = int(date_str[:4])
-month = int(date_str[4:6])
-day = int(date_str[6:])
+year,month,day = int(date_str[:4]),int(date_str[4:6]),int(date_str[6:])
 
-# datetimeモジュールを使って、土日判定
-dt = datetime.datetime(year, month, day)
+# datetimeモジュールを使って、土日判定 https://kino-code.com/python-datetime-weekday/
+dt = datetime.datetime(year,month,day)
 isHoliday = 4 < dt.weekday()
 
 # not土日の状況から祝日判定
