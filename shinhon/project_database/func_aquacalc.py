@@ -18,6 +18,7 @@ tickets_normal = {
 }
 
 def output_date(str_date):
+    '''日付を出力する'''
     return datetime.date(int(str_date[:4]), int(str_date[4:6]), int(str_date[6:]))
 
 def calc_aquaPrice(date_list, adult, child):
@@ -25,6 +26,7 @@ def calc_aquaPrice(date_list, adult, child):
     return date_list["大人"] * adult + date_list["子供"] * child
 
 def calc_aquaSum(input_date, adult, child):
+    '''平日か祝日の金額を出力する'''
     dt = output_date(input_date)
 
     select_holiday = session.query(Holiday).filter(Holiday.holi_date == dt)
