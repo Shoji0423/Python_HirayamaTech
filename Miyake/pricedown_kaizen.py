@@ -15,21 +15,20 @@ fruits = ("リンゴ", "みかん", "バナナ")            #果物類をタプ�
 alcohol = ("ビール", "日本酒")                         #酒類をタプルで定義
 noodles = ("ラーメン", "うどん", "パスタ")   #麺類をタプルで定義
 
+#関数内で値下げ計算を行う
+def keisan(kubun):
+    for food in kubun:
+        hinmoku[food] = hinmoku[food] - price_down
+        #値下げ後の金額が1円未満の場合は、1円とする
+        if hinmoku[food] < 0:
+            hinmoku[food] = 1
+
 #どの区分か判断する
 if hm_class == "果物類":
-    for food in fruits:
-        hinmoku[food] = hinmoku[food] - price_down
-        if hinmoku[food] < 0:
-            hinmoku[food] = 1
+    keisan(fruits)
 elif hm_class == "酒類":
-    for food in alcohol:
-        hinmoku[food] = hinmoku[food] - price_down
-        if hinmoku[food] < 0:
-            hinmoku[food] = 1
+    keisan(alcohol)
 elif hm_class == "麺類":
-    for food in noodles:
-        hinmoku[food] = hinmoku[food] - price_down
-        if hinmoku[food] < 0:
-            hinmoku[food] = 1
+    keisan(noodles)
 
 print(hinmoku,end="")
