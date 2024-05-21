@@ -18,7 +18,10 @@ tickets_normal = {
 }
 
 def output_date(str_date):
-    '''日付を出力する'''
+    '''
+        日付を出力する \n
+        oputput_date(YYYYMMDD)
+    '''
     return datetime.date(int(str_date[:4]), int(str_date[4:6]), int(str_date[6:]))
 
 def calc_aquaPrice(date_list, adult, child):
