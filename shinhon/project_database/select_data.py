@@ -3,7 +3,7 @@ from tables import Holiday
 from datetime import date
 
 holidaylist = session.query(Holiday).all()
-# holidaylist = session.query(Holiday).filter(Holiday.holi_date < date(2022, 11, 1))
+# holidaylist = session.query(Holiday).filter(Holiday.holi_date == date(2022, 1, 1))
 
 for item in holidaylist:
     data = item
