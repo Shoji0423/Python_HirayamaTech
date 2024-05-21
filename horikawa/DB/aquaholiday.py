@@ -1,11 +1,9 @@
 # price_UseModule.pyのシステムから祝日も考慮するシステム
-
 import sys
 import datetime
 
 from database import session
 from table import Holiday
-# from ..module.func_totalPrice import priceCalc
 
 
 # 休日判定、大人人数、子供人数を引数にする
