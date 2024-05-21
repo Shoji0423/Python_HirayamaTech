@@ -37,6 +37,7 @@ isHoliday = 4 < dt.weekday()
 
 # not土日の状況から祝日判定
 if not isHoliday:
+    # str型の日付をdate型へ変換
     date = datetime.datetime.strptime(date_str, '%Y%m%d')
 
     # 祝日との一致しているか確認（1回一致しているか）
