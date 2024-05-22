@@ -1,1 +1,12 @@
-SELECT * FROM tbl_stock
+SELECT * FROM tbl_message
+
+
+
+
+
+
+
+
+
+
+

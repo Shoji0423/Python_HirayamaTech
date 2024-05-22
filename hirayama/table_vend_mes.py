@@ -7,7 +7,7 @@ from database import ENGINE
 class message(Base):
     __tablename__ = 'tbl_message'
     seq = Column('seq', Integer, primary_key = True)
-    message = Column('message', String(100))
+    Message = Column('message', String(100))
     datetime = Column('datetime', DateTime)
 
     
