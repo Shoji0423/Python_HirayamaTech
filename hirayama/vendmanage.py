@@ -11,16 +11,20 @@ drink_list={}
 
       
 yn="Y"
-# drink_list={"お茶":110,"コーヒー":100,"ソーダ":160,"コンポタージュ":130}
+#在庫がある商品だけ出力
+def drink_list_output():
+    for item in mer:
+        drink_list.update({item.name:item.price})
+        sto=session.query(stock).filter_by(id=item.id).first()
+        if sto.stock>0:
+            print(item.name+"："+str(item.price)+"円")
+    
+    
 
-for item in mer:
-    sto=session.query(stock).filter_by(id=item.id).first()
-    if sto.stock!=0:
-        print(item.name+"："+str(item.price)+"円")
+drink_list_output()
 mon=int(input("投入金額を入力してください"))
-for item in mer:
-    drink_list.update({item.name:item.price})
 #金額入力フェーズ
+########################################################################################################
 while True :
     #何も買えない場合
     if min(drink_list.values()) > mon :
@@ -33,7 +37,11 @@ while True :
         mon=int(input("1円玉、5円玉は使用できません。再度金額を入力してください"))
     else:
         break
+#########################################################################################################
 mon_st=mon 
+
+#投入された金額をデータベースに登録
+########################################################################################################
 if mon >= 1000:
     m=session.query(money).filter_by(price=1000).first()
     m.number=int(m.number)+int(mon/1000)
@@ -63,9 +71,11 @@ if mon >= 10:
     m.number=int(m.number)+int(mon/10)
     session.add(m)
     session.commit()
+############################################################
     
 mon=mon_st
 #購入フェーズ
+###################################################################################
 while True:
     input_syo=input("何を購入しますか（商品名/cancel）")
     #cancelが入力された場合購入フェーズを抜ける
@@ -86,10 +96,11 @@ while True:
         break
     if yn=="N":
         break
-    for name in drink_list:
-        print(name+str(drink_list[name])+"円")
-        
-#おつりフェーズ 
+    drink_list_output()
+########################################################################################
+
+#おつりフェーズ
+################################################################################################### 
 print("おつり")
 if mon >= 1000:
     m=session.query(money).filter_by(price=1000).first()
@@ -170,6 +181,7 @@ if mon >= 10:
     session.add(m)
     session.commit()
     print("10円玉："+str(int(mon/10))+"枚")
+#########################################################################################################
       
     
 
