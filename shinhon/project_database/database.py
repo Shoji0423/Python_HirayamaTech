@@ -1,7 +1,8 @@
 from sqlalchemy import *
 from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
-import os
+import os, sys
+sys.path.append(os.path.dirname(__file__)) #相対パスを指定する
 
 # mysqlのDBの設定
 DATABASE = "mysql+pymysql://{user}:{password}@{host}/{database}?charset=utf8".format(**{

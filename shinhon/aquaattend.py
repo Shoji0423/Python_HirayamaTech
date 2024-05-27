@@ -1,7 +1,7 @@
 # 必要なパッケージとモジュールをインポート
-from database import session #databaseへの接続
-from tables import Attendnum #テーブルへのアクセス
-from func_aquacalc import output_date #日付を出力するモジュール
+from project_database.database import session #databaseへの接続
+from project_database.tables import Attendnum #テーブルへのアクセス
+from project_database.func_aquacalc import output_date #日付を出力するモジュール
 import sys
 
 # インプットを整理する
